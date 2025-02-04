@@ -69,3 +69,4 @@ print(message) // 결과 => "안녕하세요, 홍길동님!" 문자열 완성
 
 # 블로그 참조
 - https://gdngy.tistory.com/74 (GDNDY님 티스토리)
+https://sosodev.tistory.com/entry/Python-complex-%ED%81%B4%EB%9E%99%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-%EB%B3%B5%EC%86%8C%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0
