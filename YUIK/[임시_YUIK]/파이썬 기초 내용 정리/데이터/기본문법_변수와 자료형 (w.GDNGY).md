@@ -10,6 +10,12 @@
     - 작은 따옴표('') 또는 큰 따옴표("")를 사용하여 표현할 수 있으며, 여러 줄의 문자열의 삼중 따옴표(''') 또는 (""")를 사용함.
       <br/>
       또한, 문자열의 연산을 통해 문자열을 결합하거나 반복할 수 있다.
+- 불리언 자료형(Boolean)과 None
+  - 불리언 자료형(Boolean): 참(True)과 거짓(False)을 나타내는 자료형
+    - Bool 타입이며, 1은 true, 0은 False로 변환 가능
+    - 조건문이나 논리 연산에서 주료 사용
+    - 비교 연산자(>, <, ==, !=, >=, <=)와 논리 연산자(and, or, not)의 결과로 얻을 수 있음
+  - None
 
 #### 예제코드 
 ```
@@ -38,6 +44,32 @@ name = "홍길동"
 message = "안녕하세요, " + name + "님!" // + 연산자를 이용하면 문자열끼리 이어 붙일 수 있음
 print(message) // 결과 => "안녕하세요, 홍길동님!" 문자열 완성
 ```
+
+```
+# 불리언(Boolean) 과 None 예제 코드
+
+# 불리언(Boolean) 예제 코드
+# 불리언 값
+is_python_fun = True // is_python_fun 이라는 변수를 생성하였고, true 값을 줌
+is_snowing = False // is_snowing 이라는 변수를 생성하였고, False 값을 줌
+
+# 출력 관련 부분 (True, False)
+# True (f-string을 사용하여 is_python_fun 이라는 변수의 값과 데이터 타입을 출력하는 코드)
+print(f"is_python_fun: {is_python_fun}, type: {type(is_python_fun)}")
+# False (f-string을 사용하여 is_snowing 이라는 변수의 값과 데이터 타입을 출력하는 코드)
+print(f"is_snowing: {is_snowing}, type: {type(is_snowing)}")
+
+# 정수를 불리언으로 변환
+print(bool(1)) # 출력: True
+print(bool(0)) # 출력: False
+
+# 비교 연산 결과
+print(10 > 5) # True
+print(3 == 4) # False
+
+
+```
+
 ### 복소수 (Complex) 주요 특징 및 사용법
 1. 복소수 생성
    - 복소수는 a + b; 형태로 나타내며, 여기서 a는 실수 부분이고 b는 허수 부분입니다. (j는 허수 단위를 나타낸다.)
@@ -48,7 +80,70 @@ print(message) // 결과 => "안녕하세요, 홍길동님!" 문자열 완성
        z1 = complex(3, 4) # 3 + 4;
        z2 = 3 + 4; # 3 + 4;
        ```
-3. 복소수의 속성
+2. 복소수의 속성
+   - complex 객체의 두 가지 속성
+     - .real: 복소수의 실수 부분
+     - .imag: 복소수의 허수 부분
+  ```
+  z = 3 + 4j
+  print(z.real) # 출력: 3.0
+  print(z.imag) # 출력: 4.0
+  ```
+3. 복소수 연산
+   - 덧셈, 뺄셈, 곱셈, 나눗셈을 포함한 다양한 산술 연산 지원 > 연산 결과는 모두 complex 객체로 반환됨
+     ```
+     z1 = 3 + 4j
+     z2 = 1 - 2j
+
+     add_result = z1 + z2 # (3 + 4j) + (1 - 2j) = 4 + 2j
+     sub_result = z1 - z2 # (3 + 4j) - (1 - 2j) = 2 + 6j
+     mul_result = z1 * z2 # (3 + 4j) * (1 - 2j) = 11 + 2j
+     div_result = z1 / z2 # (3 + 4j) / (1 - 2j) = -1 + 2j
+
+     print(add_result) # 출력: (4 + 2j)
+     print(sub_result) # 출력: (2 + 16j)
+     print(mul_result) # 출력: (11 + 2j)
+     print(div_result) # 출력: (-1 + 2j)
+     ```
+4. 복소수의 절대값
+  - 복소수의 절댓값(크기)은 피타고라스 정리를 사용하여 계산됨.
+    <br>
+    #abs()함수를 사용하여 절댓값을 구할 수 있음.
+  ```
+  z = 3 + 4j
+  magnitude = abs(z) # sqrt(3**2 + 4**2) = 5.0
+  print(magnitude) # 출력: 5.0
+  ```
+5. 복소수의 복소켤레
+   - 복소수의 허수 부분의 부호를 바꾼 값 (complex 객체의 conjugate() 메서드를 사용하여 복소켤레를 구할 수 있음)
+   ```
+   z = 3 + 4j
+   conjugate_z = z.conjugate() # 3 - 4j
+   print(conjugate_z) # 출력: (3 - 4j)
+   ```
+6. 극좌표 변환
+   - 복소수를 극좌표로 변환할 때, cmath 모듈을 사용할 수 있음 (복소수의 크기와 각도를 구할 수 있음)
+   ```
+   import cmath
+
+   z = 3 + 4j
+   r, theta = cmath.polar(z) # 극좌표 변환
+   print(r) # 출력: 5.0 (절댓값)
+   print(theta) # 출력: 0.9272952180016122 (라디안 단위의 각도)
+
+   # 극좌표를 직교좌표로 변환
+   z_rect = cmath.rect(r, theta)
+   print(z_rect)  # 출력: (3.0000000000000004+3.9999999999999996j)
+   ```
+  <br>
+  
+  ```
+  # 극좌표와 직교좌표란?
+  - 직교좌표(Cartesian Coordinates): 우리가 일반적으로 사용하는 (x,y) 좌표계 (복소수에서는 a + bj 형태로 표현됨
+  - 극좌표(Polar Coordinated): 원점을 기준으로 거리를 r, 각도를 θ (라디안 단위)로 표현하는 방식
+  ```
+7. 복소수의 응용
+   - 복소수는 물리학, 공학, 신호 처리, 전기 회로 이론, 제어 이론 등에서 광범위하게 사용됨 (예를 들어, 교류 전기 회로에서 임피던스를 계산할 때 사용)
 
 ### 핵심 포인트 정리
 - <b>변수(Variable)</b>: 데이터를 저장하는 공간(num1, num2, ...등)
