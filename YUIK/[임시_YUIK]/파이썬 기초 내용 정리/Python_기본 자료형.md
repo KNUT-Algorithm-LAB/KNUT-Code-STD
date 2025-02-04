@@ -1,7 +1,7 @@
 # 파이썬 기본 자료형
 
 ## 자료형과 자료 구조
-<img width="450" alt="파이썬 자료형 (자료형과 자료구조)" src="https://github.com/user-attachments/assets/94c5332e-d55f-4d32-ae9f-9cec202c9226" />
+<img width="550" height="250" alt="파이썬 자료형 (자료형과 자료구조)" src="https://github.com/user-attachments/assets/94c5332e-d55f-4d32-ae9f-9cec202c9226" />
 
 |자료형|표기|설명|예시|
 |------|---|---|-----|
