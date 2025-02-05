@@ -15,7 +15,12 @@
     - Bool 타입이며, 1은 true, 0은 False로 변환 가능
     - 조건문이나 논리 연산에서 주료 사용
     - 비교 연산자(>, <, ==, !=, >=, <=)와 논리 연산자(and, or, not)의 결과로 얻을 수 있음
-  - None
+  - None: 값이 없음을 나타내는 특별한 자료형
+    - NoneType 타입을 가짐 -> type(none) 하면 ```<class 'NoneType'>``` 출력
+    - 값이 없음을 나타내는 용도로 사용됨
+    - 논리적으로 ```False```로 취급됨 (하지만 ```False```와는 다르다)
+    - 변수를 초기화할 때 유용함 (```변수 = None```)
+    - 함수에서 반환할 값이 없을 때 사용됨(```return None```)
 
 #### 예제코드 
 ```
@@ -71,7 +76,48 @@ print(3 == 4) # False
 print(True and False) # False
 print(True or False) # True
 print(not True) # False
+
+---
+# None 예제 코드
+
+# ✅ 기본적인 사용방법
+# 변수를 None으로 초기화
+nothing = None
+print(f"nothing: {nothing}, type: {type(nothing)}") # 출력: nothing: None, type: <class 'NoneType'>
+
+# ✅ None은 논리적으로 False로 취급됨
+print(bool(None)) # 출력: False
+
+if not None:
+  print("None은 논리적으로 False!") # 출력: None은 논리적으로 False!
+
+# ✅ None을 활용한 변수 초기화
+# 아직 값이 정해지지 않은 변수
+user_name = None
+
+# 조건에 따라 값 할당
+if user_name is None:
+  user_name = "Guest"
+
+print(user_name) # 출력: Guest
+
+# ✅ 함수에서 None 반환
+def do_nothing():
+  return None
+
+result = do_nothing()
+print(result) # 출력: None
 ```
+
+#### 🔥 불리언 vs None 차이점 정리
+|자료형|값|논리적 의미|데이터 타입|
+|------|---|---|-----|
+|```True```|1|참 (```True```)|```bool```|
+|```False```|0|거짓(```False```)|```bool```|
+|```None```|없음|거짓 (```False``` 취급)|```NoneType```|
+- ```Boolean```(```True```, ```False```)은 논리 연산을 위해 사용되며, ```1```, ```0```과 변환 가능함
+- ```None```은 값이 없음을 나타내며, ```False```로 취급되지만 ```False```와는 다름
+- 변수를 초기화할 때, 함수의 반환값이 없을 때 등 다양한 상황에서 활용됨
 
 ### 복소수 (Complex) 주요 특징 및 사용법
 1. 복소수 생성
