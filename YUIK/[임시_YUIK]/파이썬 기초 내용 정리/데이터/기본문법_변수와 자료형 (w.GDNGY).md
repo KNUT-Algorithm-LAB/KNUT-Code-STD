@@ -67,7 +67,10 @@ print(bool(0)) # 출력: False
 print(10 > 5) # True
 print(3 == 4) # False
 
-
+# 논리 연산
+print(True and False) # False
+print(True or False) # True
+print(not True) # False
 ```
 
 ### 복소수 (Complex) 주요 특징 및 사용법
